@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#container{
+    display: none;
+}
+
+.custom-loader {
+    width: 100px;
+    height: 100px;
+    display: grid;
+    border-radius: 50%;
+    -webkit-mask:radial-gradient(farthest-side,#0000 40%,#000 41%);
+    background:
+      linear-gradient(0deg ,#349AF480 50%,#349AF4FF 0) center/8px 100%,
+      linear-gradient(90deg,#349AF440 50%,#349AF4BF 0) center/100% 8px;
+    background-repeat: no-repeat;
+    animation: s3 1s infinite steps(12);
+  }
+  .custom-loader::before,
+  .custom-loader::after {
+     content:"";
+     grid-area: 1/1;
+     border-radius: 50%;
+     background:inherit;
+     opacity: 0.915;
+     transform: rotate(30deg);
+  }
+  .custom-loader::after {
+     opacity: 0.83;
+     transform: rotate(60deg);
+  }
+  
+  @keyframes s3 {
+    100% {transform: rotate(1turn)}
+  }
+
+  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+/*Cards*/
+.container-card{
+	width: 100%;
+	display: block;
+    justify-content: center;
+	max-width: 1100px;
+	margin: auto;
+}
+
+.card{
+	width: 20rem;
+	margin: 20px;
+	border-radius: 6px;
+	overflow: hidden;
+	background:#fff;
+	box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+	transition: all 400ms ease-out;
+	cursor: default;
+}
+.card:hover{
+	box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+	transform: translateY(-3%);
+}
+
+.card .contenido-card{
+	padding: 15px;
+	text-align: center;
+}
+
+.card .contenido-card a{
+	display: inline-block;
+	padding: 10px;
+	margin-top: 10px;
+	text-decoration: none;
+	color: #2fb4cc;
+	border: 1px solid #2fb4cc;
+	border-radius: 4px;
+	transition: all 400ms ease;
+	margin-bottom: 5px;
+}
+.card .contenido-card a:hover{
+	background: #2fb4cc;
+	color: #fff;
+}
+@media only screen and (min-width:320px) and (max-width:768px){
+	.container-card{
+		flex-wrap: wrap;
+	}
+	.card{
+		margin: 15px;
+	}
+}
+/*Fin-Cards*/
